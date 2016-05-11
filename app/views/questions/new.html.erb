@@ -1,0 +1,7 @@
+<h1>Create a New Question</h1>
+
+<%= simple_form_for :question do |f| %>
+  <%= f.input :title, error: "Title needs to be at least 40 characters" %>
+  <%= f.input :description, error: "Description needs to be at least 50 characters" %>
+  <%= f.button :submit %>
+<% end %>
