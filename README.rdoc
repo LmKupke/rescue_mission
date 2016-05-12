@@ -1,6 +1,9 @@
 == README
+
 ![Build Status](https://codeship.com/projects/5370ce90-f9c8-0133-27dd-124ad23604b3/status?branch=master)
+
 ![Code Climate](https://codeclimate.com/github/LmKupke/rescue_mission.png)
+
 ![Coverage Status](https://coveralls.io/repos/LmKupke/rescue_mission/badge.png)
 
 This README would normally document whatever steps are necessary to get the
