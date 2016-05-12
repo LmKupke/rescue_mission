@@ -8,9 +8,15 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    if current_user != nil
+      @current_user = current_user
+    else
+      render :index
+    end
   end
 
   def create
+    @current_user = current_user
     @question = Question.new(question_params)
 
     if @question.save
@@ -21,6 +27,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :description, :creator_id)
+      params.require(:question).permit(:title, :description, :creator_id)
   end
 end

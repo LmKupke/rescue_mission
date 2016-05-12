@@ -1,6 +1,7 @@
 <h1>Questions</h1>
-
-<%= link_to "New Question", new_question_path %>
+<% if user_signed_in? %>
+  <%= link_to "New Question", new_question_path %>
+<% end %>
 
 <ul>
   <% @questions.each do |question| %>
