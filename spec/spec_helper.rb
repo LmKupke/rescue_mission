@@ -4,7 +4,15 @@
 # this file to always be loaded, without a need to explicitly require it in any
 # files.
 #
-# Given that it is always loaded, you are encouraged to keep this file as
+
+
+require 'simplecov'
+SimpleCov.start 'rails'
+
+
+require 'coveralls'
+Coveralls.wear!('rails')
+#s loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
 # individual file that may not need all of that loaded. Instead, consider making

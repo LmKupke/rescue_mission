@@ -8,14 +8,16 @@ gem 'jquery-rails'
 gem 'rails-erd'
 gem 'devise'
 gem 'simple_form'
-gem 'omniauth-facebook'
+gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem "factory_girl_rails"
 end
 
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'coveralls', require: false
 end
