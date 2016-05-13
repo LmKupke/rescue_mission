@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
 
   def new
     if current_user != nil
+      @question = Question.new
       @current_user = current_user
     else
       render :index

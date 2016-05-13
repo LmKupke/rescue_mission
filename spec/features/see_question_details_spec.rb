@@ -4,7 +4,7 @@ feature "see question" do
   scenario "see details about posted question" do
     user1 = create(:user)
 
-    question2 = Question.create!(title:"Why is rails becoming a lot easier? Launch teaching or just getting it", description: "I was wondering why rails was becoming a lot easier? Is it because the articles make sense now?", creator: user1)
+    question2 = Question.create!(title:"#{'a'* 40}", description: "#{'b' * 150}", creator: user1)
     visit questions_path
 
     expect(page).to have_content(question2.title)
