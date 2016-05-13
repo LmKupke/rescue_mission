@@ -4,7 +4,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @current_user = current_user
     @question = Question.find(params[:id])
+    @answers = @question.answers
+    @answer = Answer.new
   end
 
   def new

@@ -2,5 +2,25 @@
 
 
 <p>
-  <%= @question.description %>
+  <%= @question.description %> - <%= @question.creator.name %>
 </p>
+
+
+<% if @answers != nil %>
+  <h2>Answers:</h2>
+    <ul>
+      <% @answers.each do |answer| %>
+        <li><%= @answer.reply %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+
+<% if @current_user != @question.creator %>
+  <%= simple_form_for (@answer) do |f| %>
+    <%= f.input :reply, label: "Answer:", error: "Reply needs to be at least 40 characters" %> <br>
+    <%= f.hidden_field :question_id, value: @question.id %>
+    <%= f.hidden_field :user, value:  @current_user %>
+    <%= f.button :submit, label: "Answer Question" %>
+  <% end %>
+<% end %>
