@@ -3,7 +3,7 @@ require "rails_helper"
 feature "see question" do
   scenario "see details about posted question" do
     user1 = create(:user)
-
+    login_as(user1, scope: :user)
     question2 = Question.create!(title:"#{'a'* 40}", description: "#{'b' * 150}", creator: user1)
     visit questions_path
 

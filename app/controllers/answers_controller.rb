@@ -5,7 +5,8 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to question_path(Question.find(@answer.question_id))
     else
-      redirect_to question_path(Question.find(@answer.question_id))
+
+      redirect_to question_path(Question.find(@answer.question_id)), notice: "Reply needs to be at least 50 characters"
     end
   end
 

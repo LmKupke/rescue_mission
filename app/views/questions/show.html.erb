@@ -10,17 +10,20 @@
   <h2>Answers:</h2>
     <ul>
       <% @answers.each do |answer| %>
-        <li><%= @answer.reply %></li>
+        <li><%= answer.reply %></li>
+        <p>-<%= answer.user.name %>
+          <%= answer.created_at %>
+        </p>
       <% end %>
     </ul>
 <% end %>
 
 
-<% if @current_user != @question.creator %>
-  <%= simple_form_for (@answer) do |f| %>
-    <%= f.input :reply, label: "Answer:", error: "Reply needs to be at least 40 characters" %> <br>
+<% if @current_user != @question.creator && @current_user != nil %>
+  <%= simple_form_for (@answer), method: "post", url: answers_path do |f| %>
+    <%= f.input :reply, label: "Answer:", error: "Reply needs to be at least 50 characters" %> <br>
     <%= f.hidden_field :question_id, value: @question.id %>
-    <%= f.hidden_field :user, value:  @current_user %>
-    <%= f.button :submit, label: "Answer Question" %>
+    <%= f.hidden_field :user_id, value:  @current_user.id %>
+    <%= f.button :submit %>
   <% end %>
 <% end %>
