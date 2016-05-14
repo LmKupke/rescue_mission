@@ -5,6 +5,10 @@
   <%= @question.description %> - <%= @question.creator.name %>
 </p>
 
+<% if @current_user == @question.creator %>
+  <%= link_to "Edit Question", edit_question_path %>
+  <%= link_to "Delete Question", question_path, method: 'delete' %>
+<% end %>
 
 <% if @answers != nil %>
   <h2>Answers:</h2>

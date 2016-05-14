@@ -1,0 +1,10 @@
+<h1>Edit Question</h1>
+
+<%= simple_form_for (@question), method: "patch", url: question_path do |f| %>
+  <%= f.input :title, error: "Title needs to be at least 40 characters" %> <br>
+  <%= f.input :description, error: "Description needs to be at least 150 characters" %>
+  <%= f.hidden_field :creator_id, value:  @current_user.id %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Delete Question', question_path, method: 'delete' %>
