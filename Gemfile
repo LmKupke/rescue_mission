@@ -9,8 +9,8 @@ gem 'rails-erd'
 gem 'devise'
 gem 'simple_form'
 gem 'simplecov', :require => false, :group => :test
-
 gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'pry-rails'
